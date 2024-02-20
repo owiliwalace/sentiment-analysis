@@ -88,7 +88,7 @@ bert_f1 = f1_score(true_labels, predictions, average='weighted')
 
 # Plotting
 plt.plot(training_losses, label='Training Loss')
-plt.xlabel('Iterations')
+plt.xlabel('Iterations ')
 plt.ylabel('Loss')
 plt.legend()
 plt.show()
