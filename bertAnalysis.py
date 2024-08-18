@@ -12,13 +12,6 @@ from torch.nn import CrossEntropyLoss
 
 
 
-
-
-
-
-
-
-
 # Load dataset from CSV file
 csv_file_path = 'C:/Users/User/Desktop/Tweets.csv'
 df = pd.read_csv(csv_file_path)
@@ -45,7 +38,7 @@ label_encoder = LabelEncoder()
 train_labels = label_encoder.fit_transform(train_data['sentiment'])
 test_labels = label_encoder.transform(test_data['sentiment'])
 
-# Prepare PyTorch datasets
+# Prepare PyTorch datasetsbn bnnh
 train_dataset = TensorDataset(
     torch.tensor(train_encodings['input_ids']),
     torch.tensor(train_encodings['attention_mask']),
