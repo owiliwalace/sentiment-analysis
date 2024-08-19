@@ -9,9 +9,6 @@ from sklearn.preprocessing import LabelEncoder
 from torch.optim import Adam
 from torch.nn import CrossEntropyLoss
 
-
-
-
 # Load dataset from CSV file
 csv_file_path = 'C:/Users/User/Desktop/Tweets.csv'
 df = pd.read_csv(csv_file_path)
@@ -50,6 +47,8 @@ test_dataset = TensorDataset(
     torch.tensor(test_encodings['attention_mask']),
     torch.tensor(test_labels)
 )
+
+
 
 # BERT Model
 model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=len(df['sentiment'].unique()))
