@@ -9,6 +9,12 @@ from sklearn.preprocessing import LabelEncoder
 from torch.optim import Adam
 from torch.nn import CrossEntropyLoss
 
+
+
+
+
+
+
 # Load dataset from CSV file
 csv_file_path = 'C:/Users/User/Desktop/Tweets.csv'
 df = pd.read_csv(csv_file_path)
@@ -23,7 +29,7 @@ df['text'] = df['text'].astype(str)
 # Split dataset into training and testing sets
 train_data, test_data = train_test_split(df, test_size=0.1, random_state=42)
 
-# BERT Tokenizer
+# BERT
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 train_encodings = tokenizer(train_data['text'].tolist(), truncation=True, padding=True)
