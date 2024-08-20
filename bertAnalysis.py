@@ -26,11 +26,9 @@ train_data, test_data = train_test_split(df, test_size=0.1, random_state=42)
 # BERT Tokenizer
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
-# Tokenize the training and testing data
 train_encodings = tokenizer(train_data['text'].tolist(), truncation=True, padding=True)
 test_encodings = tokenizer(test_data['text'].tolist(), truncation=True, padding=True)
 
-# Label Encoding for 'sentiment' column
 label_encoder = LabelEncoder()
 train_labels = label_encoder.fit_transform(train_data['sentiment'])
 test_labels = label_encoder.transform(test_data['sentiment'])
