@@ -9,19 +9,6 @@ from sklearn.preprocessing import LabelEncoder
 from torch.optim import Adam
 from torch.nn import CrossEntropyLoss
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Load dataset from CSV file
 csv_file_path = 'C:/Users/User/Desktop/Tweets.csv'
 df = pd.read_csv(csv_file_path)
