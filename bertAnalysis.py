@@ -8,16 +8,13 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 from torch.optim import Adam
 from torch.nn import CrossEntropyLoss
-
-# Load dataset from CSV file
 csv_file_path = 'C:/Users/User/Desktop/Tweets.csv'
 df = pd.read_csv(csv_file_path)
 
-# Check lengths of arrays
+
 for column in ['textID', 'text', 'selected_text', 'sentiment']:
     print(f"Length of {column}: {len(df[column])}")
 
-# Ensure 'text' column is string type
 df['text'] = df['text'].astype(str)
 
 # Split dataset into training and testing sets
