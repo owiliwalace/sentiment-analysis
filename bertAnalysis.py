@@ -11,7 +11,6 @@ from torch.nn import CrossEntropyLoss
 csv_file_path = 'C:/Users/User/Desktop/Tweets.csv'
 df = pd.read_csv(csv_file_path)
 
-
 for column in ['textID', 'text', 'selected_text', 'sentiment']:
     print(f"Length of {column}: {len(df[column])}")
 
@@ -30,7 +29,6 @@ label_encoder = LabelEncoder()
 train_labels = label_encoder.fit_transform(train_data['sentiment'])
 test_labels = label_encoder.transform(test_data['sentiment'])
 
-# Prepare PyTorch datasetsbn bnnh
 train_dataset = TensorDataset(
     torch.tensor(train_encodings['input_ids']),
     torch.tensor(train_encodings['attention_mask']),
@@ -43,9 +41,6 @@ test_dataset = TensorDataset(
     torch.tensor(test_labels)
 )
 
-
-
-# BERT Model
 model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=len(df['sentiment'].unique()))
 
 # Training Loop (Placeholder, replace with actual training code)
