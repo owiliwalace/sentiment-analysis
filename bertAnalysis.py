@@ -62,8 +62,7 @@ for epoch in range(num_epochs):
         loss.backward()
         optimizer.step()
         training_losses.append(loss.item())
-
-# Evaluation Loop (Placeholder, replace with actual evaluation code)
+ evaluation code)
 model.eval()
 predictions = []
 true_labels = []
@@ -75,10 +74,7 @@ with torch.no_grad():
         predictions.extend(torch.argmax(outputs.logits, dim=1).cpu().numpy())
         true_labels.extend(labels.cpu().numpy())
 
-# Calculate F1 Score
 bert_f1 = f1_score(true_labels, predictions, average='weighted')
-
-# Plotting
 plt.plot(training_losses, label='Training Loss')
 plt.xlabel('Iterations ')
 plt.ylabel('Loss')
