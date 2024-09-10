@@ -18,8 +18,6 @@ df['text'] = df['text'].astype(str)
 
 # Split dataset into training and testing sets
 train_data, test_data = train_test_split(df, test_size=0.1, random_state=42)
-
-# BERT
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 train_encodings = tokenizer(train_data['text'].tolist(), truncation=True, padding=True)
