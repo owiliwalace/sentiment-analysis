@@ -15,14 +15,10 @@ for column in ['textID', 'text', 'selected_text', 'sentiment']:
     print(f"Length of {column}: {len(df[column])}")
 
 df['text'] = df['text'].astype(str)
-
-# Split dataset into training and testing sets
 train_data, test_data = train_test_split(df, test_size=0.1, random_state=42)
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-
 train_encodings = tokenizer(train_data['text'].tolist(), truncation=True, padding=True)
 test_encodings = tokenizer(test_data['text'].tolist(), truncation=True, padding=True)
-
 label_encoder = LabelEncoder()
 train_labels = label_encoder.fit_transform(train_data['sentiment'])
 test_labels = label_encoder.transform(test_data['sentiment'])
