@@ -11,8 +11,6 @@ from torch.nn import CrossEntropyLoss
 csv_file_path = 'C:/Users/User/Desktop/Tweets.csv'
 df = pd.read_csv(csv_file_path)
 
-
-
 #seltember14th
 
 
@@ -42,7 +40,12 @@ test_dataset = TensorDataset(
 
 model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=len(df['sentiment'].unique()))
 
-# Training Loop (Placeholder, replace with actual training code)
+# Training Loop (Placeholder, replace with actual training
+
+
+
+
+
 optimizer = Adam(model.parameters(), lr=2e-5)
 criterion = CrossEntropyLoss()
 
@@ -50,6 +53,9 @@ criterion = CrossEntropyLoss()
 num_epochs = 5
 batch_size = 2
 training_losses = []
+
+
+
 
 for epoch in range(num_epochs):
     model.train()
