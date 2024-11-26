@@ -11,7 +11,7 @@ from torch.nn import CrossEntropyLoss
 csv_file_path = 'C:/Users/User/Desktop/Tweets.csv'
 df = pd.read_csv(csv_file_path)
 
-#october 24th
+#november 26th
 
 for column in ['textID', 'text', 'selected_text', 'sentiment']:
     print(f"Length of {column}: {len(df[column])}")
